@@ -1,12 +1,29 @@
+package tn.esprit.gestionzoo.entities;
+
 public class Zoo
 {
     public Animal[] animals;
-    public String name;
+    private String name;
     public String city;
     final int nbrCages = 25;
     int nbrAnimals;
 
     public Zoo() {
+    }
+    public String Getname()
+    {
+        return name;
+    }
+    public void Setname(String name)
+    {
+        if(name!="")
+        {
+            this.name = name;
+        }
+        else
+        {
+            System.out.println("Invalid name");
+        }
     }
 
 
@@ -19,23 +36,24 @@ public class Zoo
     void displayZoo() {
         System.out.println("Nom: " + name + ", City: " + city + ", Nombres des cages: " + nbrCages);
     }
-    boolean addAnimal(Animal animal) {
+    public boolean addAnimal(Animal animal) {
         if (searchAnimal(animal) != -1)
             return false;
         if (nbrAnimals == nbrCages)
             return false;
         animals[nbrAnimals] = animal;
         nbrAnimals++;
-        return true;
+        return nbrAnimals == nbrCages;
+
     }
 
-    void displayAnimals() {
+    public void displayAnimals() {
         System.out.println("Liste des animaux de " + name + ":");
         for (int i = 0; i < nbrAnimals; i++) {
             System.out.println(animals[i]);
         }
     }
-    int searchAnimal(Animal animal) {
+    public int searchAnimal(Animal animal) {
         int index = -1;
         for (int i = 0; i < nbrAnimals; i++) {
             if (animal.name == animals[i].name)
@@ -46,7 +64,7 @@ public class Zoo
     public String toString() {
         return "Name: " + name + ", City: " + city + ", Nombres des cages: " +nbrCages;
     }
-    boolean removeAnimal(Animal animal) {
+    public boolean removeAnimal(Animal animal) {
         int index = searchAnimal(animal);
         if (index != -1) {
             // Décaler les éléments suivants pour combler le trou

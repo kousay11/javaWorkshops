@@ -1,4 +1,7 @@
+package tn.esprit.gestionzoo.main;
+
 import java.util.Scanner;
+import tn.esprit.gestionzoo.entities.*;
 public class ZooManagement {
     private int nbrCages = 20;
     private String zooName = "my zoo";
@@ -11,7 +14,7 @@ public class ZooManagement {
 
         scanner.nextLine();
 
-        System.out.print("entrer le nom du Zoo");
+        System.out.print("entrer le nom du tn.esprit.gestionzoo.entities.Zoo");
         zooName = scanner.nextLine();
 
 
@@ -30,18 +33,18 @@ public class ZooManagement {
 
         Animal lion = new Animal();
         lion.name = "Simba";
-        lion.age = 8;
+        lion.setAge(8);
         lion.family = "Cats";
         lion.isMammal = true;
 
         Zoo myZoo = new Zoo();
-        myZoo.name = "Ariana Park";
+        myZoo.Setname( "Ariana Park");
         myZoo.city = "Ariana";
 //        myZoo.nbrCages=25;
         myZoo.animals = new Animal[25];
 
         Zoo TheZoo = new Zoo();
-        TheZoo.name = "Ghazela Park";
+        TheZoo.Setname( "Ghazela Park");
         TheZoo.city = "Ariana";
 //        myZoo.nbrCages=25;
         TheZoo.animals = new Animal[25];
@@ -73,9 +76,9 @@ public class ZooManagement {
         Zoo zooAvecPlusAnimaux = Zoo.comparerZoo(TheZoo, myZoo);
 
         if (zooAvecPlusAnimaux == TheZoo) {
-            System.out.println("Le Zoo Thezoo a plus d'animaux ou le même nombre d'animaux.");
+            System.out.println("Le tn.esprit.gestionzoo.entities.Zoo Thezoo a plus d'animaux ou le même nombre d'animaux.");
         } else {
-            System.out.println("Le Zoo myZoo a plus d'animaux.");
+            System.out.println("Le tn.esprit.gestionzoo.entities.Zoo myZoo a plus d'animaux.");
         }
 
 
