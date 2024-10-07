@@ -80,6 +80,38 @@ public class ZooManagement {
         } else {
             System.out.println("Le tn.esprit.gestionzoo.entities.Zoo myZoo a plus d'animaux.");
         }
+        Aquatic aq = new Aquatic();
+        aq.name = "Simba";
+        aq.setAge(8);
+        aq.family = "Cats";
+        aq.isMammal = true;
+        aq.habitat="zoo";
+        Terrestrial tr = new Terrestrial();
+        tr.name = "Simba";
+        tr.setAge(8);
+        tr.family = "Cats";
+        tr.isMammal = true;
+        tr.nbrLegs=10;
+        Dolphin dl = new Dolphin();
+        dl.name = "poisson";
+        dl.setAge(5);
+        dl.family = "fish";
+        dl.isMammal = true;
+        dl.habitat="sea";
+        dl.swimmingSpeed=180.5f;
+        Penguin pg = new Penguin();
+        pg.name = "poisson";
+        pg.setAge(5);
+        pg.family = "fish";
+        pg.isMammal = true;
+        pg.habitat="sea";
+        pg.swimmingDepth=1.8f;
+        System.out.println(aq.toString());
+        System.out.println(dl.toString());
+        System.out.println(pg.toString());
+        aq.swim();
+        dl.swim();
+        pg.swim();
 
 
     }
